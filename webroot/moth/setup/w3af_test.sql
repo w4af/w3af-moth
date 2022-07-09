@@ -1,3 +1,7 @@
+CREATE DATABASE w3af_test;
+
+USE w3af_test;
+
 -- MySQL dump 10.11
 --
 -- Host: localhost    Database: w3af_test
