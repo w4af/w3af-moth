@@ -20,7 +20,7 @@ RUN rm -rf /etc/apache2/mods-enabled/ssl.*
 RUN sed -ri 's/^display_errors\s*=\s*Off/display_errors = On/g' /etc/php/7.4/apache2/php.ini
 RUN sed -ri 's/^error_reporting\s*=.*$/error_reporting = E_ALL \& ~E_DEPRECATED \& ~E_NOTICE/g' /etc/php/7.4/apache2/php.ini
 RUN sed -ri 's/^short_open_tag\s*=\s*Off/short_open_tag = On/g' /etc/php/7.4/apache2/php.ini
-RUN sed -ri 's|^auto_prepend_file\s*=\s*|auto_prepend_file = /app/moth/show_source.php|g' /etc/php/7.4/apache2/php.ini
+RUN sed -ri 's|^auto_prepend_file\s*=\s*|auto_prepend_file = /app/show_source.php|g' /etc/php/7.4/apache2/php.ini
 
 # Allow root to login
 RUN sed -ri 's/^PermitRootLogin.*$/PermitRootLogin yes/g' /etc/ssh/sshd_config
