@@ -6,11 +6,12 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get upgrade -y
 
-RUN apt-get install -y openssh-server
+# Add mod-security2 for test_mod_security
+RUN apt-get install -y openssh-server libapache2-mod-security2
 
 # Some modules are not enabled yet
 RUN rm -rf /etc/apache2/mods-enabled/jk.*
-RUN rm -rf /etc/apache2/mods-enabled/mod-security.*
+RUN rm -rf /etc/apache2/mods-enabled/security2.*
 RUN rm -rf /etc/apache2/mods-enabled/python.*
 RUN rm -rf /etc/apache2/mods-enabled/ssl.*
 
@@ -27,6 +28,14 @@ RUN sed -ri 's/^PermitRootLogin.*$/PermitRootLogin yes/g' /etc/ssh/sshd_config
 
 # Webroot for moth
 ADD webroot/moth/ /app/
+
+## Test Fixtures
+
+# test_firefox_stealer
+RUN useradd moth
+ADD homes/moth/ /home/moth/
+
+
 
 # And some specific configurations to make the app more vulnerable
 RUN rm -rf /app/w3af/audit/xss/stored/data.txt
