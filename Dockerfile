@@ -6,14 +6,21 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get upgrade -y
 
-# Add mod-security2 for test_mod_security
-RUN apt-get install -y openssh-server libapache2-mod-security2
+# Add mod-security2 for test_mod_security, ssh server for test_ssh_version
+RUN apt-get install -y openssh-server libapache2-mod-security2 openssh-server
 
 # Some modules are not enabled yet
 RUN rm -rf /etc/apache2/mods-enabled/jk.*
 RUN rm -rf /etc/apache2/mods-enabled/security2.*
 RUN rm -rf /etc/apache2/mods-enabled/python.*
 RUN rm -rf /etc/apache2/mods-enabled/ssl.*
+
+# Copy site configuration
+ADD apache2config/sites-available/000-default.conf /etc/apache2/sites-available
+
+# Enable vulnerable mods
+RUN a2enmod dav
+RUN a2enmod dav_fs
 
 #
 # PHP configuration
@@ -35,7 +42,12 @@ ADD webroot/moth/ /app/
 RUN useradd moth
 ADD homes/moth/ /home/moth/
 
+# test_read_mail
+ADD var/mail/ /var/mail/
+ADD var/spool /var/spool/
 
+# test_rootkit_hunter
+RUN echo test > /sbin/.login
 
 # And some specific configurations to make the app more vulnerable
 RUN rm -rf /app/w3af/audit/xss/stored/data.txt
