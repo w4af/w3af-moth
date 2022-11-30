@@ -18,15 +18,16 @@
 	<br/>
 
 	<?
-		$link = mysql_connect("localhost", "root", "moth");
-		mysql_select_db("w3af_test", $link);
+		$link = mysqli_connect("localhost", "root", "");
+		mysqli_select_db($link, "w3af_test");
 
-		$result = mysql_query("SELECT * FROM users where name ='" . $_POST['user'] ."'", $link);
+		$result = mysqli_query($link, "SELECT * FROM users where name ='" . $_POST['user'] ."'");
 
-		echo "<b>Name:</b> ".mysql_result($result, 0, "name")."<br>";    
-		echo "<b>Address:</b>  ".mysql_result($result, 0, "address")."<br>";           
-		echo "<b>Phone:</b> ".mysql_result($result, 0, "phone")."<br>";      
-		echo "<b>Email:</b> ".mysql_result($result, 0, "email")."<br>"; 
+    $row = $result->fetch_assoc();
+    echo "<b>Name:</b> ".$row["name"]."<br>";
+    echo "<b>Address:</b>  ".$row["address"]."<br>";
+    echo "<b>Phone:</b> ".$row["phone"]."<br>";
+    echo "<b>Email:</b> ".$row["email"]."<br>";
 
 	?>
 

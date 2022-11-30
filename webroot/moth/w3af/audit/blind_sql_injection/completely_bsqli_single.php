@@ -10,17 +10,18 @@ function errorHandler( $severity, $msg, $filename, $linenum){
 
 set_error_handler("errorHandler");
 
-$link = mysql_connect("localhost", "root", "moth");
+$link = mysqli_connect("localhost", "root", "");
 
-mysql_select_db("w3af_test", $link);
+mysqli_select_db($link, "w3af_test");
 
 if ( $_GET['debug'] ) {
 echo "SELECT * FROM users where email ='" . $_GET['email'] ."'";
 echo "<br>";
 }
 
-$result = mysql_query("SELECT * FROM users where email ='" . $_GET['email'] ."'", $link);
-mysql_result($result, 0, "name");
+$result = mysqli_query($link, "SELECT * FROM users where email ='" . $_GET['email'] ."'");
+$row = $result->fetch_assoc();
+$row["name"];
 
 echo "<i>don't get fooled by the 'static' response, the email parameter <b>is</b> injectable</i>";
 

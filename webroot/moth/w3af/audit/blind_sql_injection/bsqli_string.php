@@ -10,20 +10,20 @@ function errorHandler( $severity, $msg, $filename, $linenum){
 
 set_error_handler("errorHandler");
 
-$link = mysql_connect("localhost", "root", "moth");
+$link = mysqli_connect("localhost", "root", "");
 
-mysql_select_db("w3af_test", $link);
+mysqli_select_db($link, "w3af_test");
 
 if ( $_GET['debug'] ) {
 echo "SELECT * FROM users where email ='" . $_GET['email'] ."'";
 echo "<br>";
 }
 
-$result = mysql_query("SELECT * FROM users where email ='" . $_GET['email'] ."'", $link);
-
-echo "<b>Name:</b> ".mysql_result($result, 0, "name")."<br>";    
-echo "<b>Address:</b>  ".mysql_result($result, 0, "address")."<br>";           
-echo "<b>Phone:</b> ".mysql_result($result, 0, "phone")."<br>";      
-echo "<b>Email:</b> ".mysql_result($result, 0, "email")."<br>"; 
+$result = mysqli_query($link, "SELECT * FROM users where email ='" . $_GET['email'] ."'");
+$row = $result->fetch_assoc();
+echo "<b>Name:</b> ".$row["name"]."<br>";
+echo "<b>Address:</b>  ".$row["address"]."<br>";
+echo "<b>Phone:</b> ".$row["phone"]."<br>";
+echo "<b>Email:</b> ".$row["email"]."<br>";
 
 ?>

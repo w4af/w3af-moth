@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "Changing mode for dav folder..."
+chown -R root:root /app/w3af/audit/dav/no-privileges
 
 echo "Starting mysql server..."
 /usr/bin/mysqld_safe > /dev/null 2>&1 &

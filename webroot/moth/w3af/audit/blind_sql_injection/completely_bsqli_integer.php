@@ -11,11 +11,11 @@ function errorHandler( $severity, $msg, $filename, $linenum){
 
 set_error_handler("errorHandler");
 
-$link = mysql_connect("localhost", "root" , "moth");
+$link = mysqli_connect("localhost", "root" , "");
 
-mysql_select_db("w3af_test", $link);
+mysqli_select_db($link, "w3af_test");
 
-$result = mysql_query("SELECT * FROM users where id =" . $_GET['id'] , $link);
+$result = mysqli_query($link, "SELECT * FROM users where id =" . $_GET['id']);
 
 echo "<i>don't get fooled by the 'static' response, the id parameter <b>is</b> injectable</i>";
 
