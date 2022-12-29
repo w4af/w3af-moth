@@ -1,16 +1,16 @@
 <!-- ###### Header ###### -->
 <div id="top">
     <div id="header">
-				<div id="headerTitle"><img src="/images/w3af.png" alt="w3af logo" align="left" border="0"></div>
+				<div id="headerTitle"><img src="/images/w4af.png" alt="w4af logo" align="left" border="0"></div>
 				<br />
 				<!-- ###### Navigation Bar ###### -->
 				<div id="navBar">          
           <div id="navBarTitle">Table of Contents</div>
 
-					<a href="http://w3af.sf.net/">w3af homepage</a>
+					<a href="http://w4af.sf.net/">w4af homepage</a>
 					<a href="http://sourceforge.net/tracker/?group_id=170274&atid=853652">Report a bug</a>
                     <br />
-					<a href="#w3af">w3af tests</a>
+					<a href="#w4af">w4af tests</a>
 					<a href="#wivet">wivet</a>
 					<a href="#SiteGenerator">SiteGenerator</a>
 					<a href="#vulnerable-web-applications">Web Applications</a>

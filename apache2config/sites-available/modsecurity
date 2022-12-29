@@ -43,37 +43,37 @@
 	#
 	# Authentication tests
 	# 
-	<Directory "/var/www/moth/w3af/bruteforce/basicAuthBrute/easy_guess/">
+	<Directory "/var/www/moth/w4af/bruteforce/basicAuthBrute/easy_guess/">
 	    AuthType Basic
 	    AuthName "moth authentication - basic"
-        AuthUserFile /var/www/moth/w3af/bruteforce/basicAuthBrute/easy_guess/.htpasswd
+        AuthUserFile /var/www/moth/w4af/bruteforce/basicAuthBrute/easy_guess/.htpasswd
         Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
     </Directory>
 
-    <Directory "/var/www/moth/w3af/bruteforce/digestAuthBrute/easy_guess/">
+    <Directory "/var/www/moth/w4af/bruteforce/digestAuthBrute/easy_guess/">
 	    AuthType Digest
 	    AuthName "moth authentication - digest"
-	    AuthUserFile /var/www/moth/w3af/bruteforce/basicAuthBrute/easy_guess/.htpasswd
+	    AuthUserFile /var/www/moth/w4af/bruteforce/basicAuthBrute/easy_guess/.htpasswd
 	    Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
     </Directory>
 
-    <Directory "/var/www/moth/w3af/bruteforce/basicAuthBrute/impossible_guess/">
+    <Directory "/var/www/moth/w4af/bruteforce/basicAuthBrute/impossible_guess/">
 	    AuthType Basic
 	    AuthName "moth authentication - basic"
-	    AuthUserFile /var/www/moth/w3af/bruteforce/basicAuthBrute/impossible_guess/.htpasswd
+	    AuthUserFile /var/www/moth/w4af/bruteforce/basicAuthBrute/impossible_guess/.htpasswd
 	    Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
     </Directory>
 
-    <Directory "/var/www/moth/w3af/bruteforce/digestAuthBrute/impossible_guess/">
+    <Directory "/var/www/moth/w4af/bruteforce/digestAuthBrute/impossible_guess/">
 	    AuthType Digest
 	    AuthName "moth authentication - digest"
-	    AuthUserFile /var/www/moth/w3af/bruteforce/basicAuthBrute/impossible_guess/.htpasswd
+	    AuthUserFile /var/www/moth/w4af/bruteforce/basicAuthBrute/impossible_guess/.htpasswd
 	    Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
@@ -82,14 +82,14 @@
     #
     # Special 404 message
     #
-    <Directory "/var/www/moth/w3af/bruteforce/">
-	    ErrorDocument 404 /w3af/
+    <Directory "/var/www/moth/w4af/bruteforce/">
+	    ErrorDocument 404 /w4af/
     </Directory>
 
     #
     # Poorly configured Limit
     #
-    <Location "/w3af/audit/htaccess_methods/">
+    <Location "/w4af/audit/htaccess_methods/">
 	    <Limit GET>
 			order deny,allow
 			deny from all

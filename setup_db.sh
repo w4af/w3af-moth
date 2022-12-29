@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Changing mode for dav folder..."
-chown -R root:root /app/w3af/audit/dav/no-privileges
+chown -R root:root /app/w4af/audit/dav/no-privileges
 
 echo "Starting mysql server..."
 /usr/bin/mysqld_safe > /dev/null 2>&1 &
@@ -15,7 +15,7 @@ done
 echo "mysql server running"
 
 echo "Importing mysql schema..."
-mysql -uroot < /app/setup/w3af_test.sql
+mysql -uroot < /app/setup/w4af_test.sql
 echo "Imported schema"
 
 echo "Stopping mysql server..."

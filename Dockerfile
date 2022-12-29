@@ -50,9 +50,9 @@ ADD var/spool /var/spool/
 RUN echo test > /sbin/.login
 
 # And some specific configurations to make the app more vulnerable
-RUN rm -rf /app/w3af/audit/xss/stored/data.txt
-RUN touch /app/w3af/audit/xss/stored/data.txt
-RUN chown www-data: /app/w3af/audit/xss/stored/data.txt
+RUN rm -rf /app/w4af/audit/xss/stored/data.txt
+RUN touch /app/w4af/audit/xss/stored/data.txt
+RUN chown www-data: /app/w4af/audit/xss/stored/data.txt
 
 COPY ./setup_db.sh /init_mysql.sh
 

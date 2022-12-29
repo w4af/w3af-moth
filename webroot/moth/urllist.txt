@@ -1,2 +1,2 @@
 http://127.0.0.1:9008/hidden/
-http://127.0.0.1:9008/w3af/i-do-not-exist/
+http://127.0.0.1:9008/w4af/i-do-not-exist/

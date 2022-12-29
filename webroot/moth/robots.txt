@@ -1,6 +1,6 @@
-ALLOW: http://moth/w3af/
+ALLOW: http://moth/w4af/
 #f00!
-DISALLOW:http://moth/w3af/audit/
+DISALLOW:http://moth/w4af/audit/
 
 allow: /hidden/
 

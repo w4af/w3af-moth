@@ -1,5 +1,5 @@
 mysql -uroot -pmoth
-create database w3af_test;
+create database w4af_test;
 exit
-mysql -uroot -pmoth -hlocalhost w3af_test < w3af_test.sql
+mysql -uroot -pmoth -hlocalhost w4af_test < w4af_test.sql
 

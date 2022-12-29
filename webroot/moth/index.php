@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
  <head>
-  <link rel="stylesheet" type="text/css" href="/w3af/default.css" title="default" />
+  <link rel="stylesheet" type="text/css" href="/w4af/default.css" title="default" />
   <title>:: moth homepage ::</title>
  </head>
 
@@ -21,7 +21,7 @@ Application Security Scanners and Static Code Analysis tools (SCA).
 
 <p>The motivation for creating this image came after reading "anantasec-report.pdf" which is included
 in this release ("anantasec/anantasec-report.pdf"). The main objective of this vmware image is to
-be able to test the w3af - Web Application Attack and Audit Framework and compare it with the
+be able to test the w4af - Web Application Attack and Audit Framework and compare it with the
 commercial tools included in the report.</p>
 
 <p>Other tools like this are available (securibench to name one) but they lack
@@ -30,24 +30,24 @@ Applications! In our case, we use the results gathered in the anantasec
 report as our list of Web Application Vulnerabilities
 included in the release.</p>
 
- <h1 id="w3af">
-     w3af test scripts (PHP)
+ <h1 id="w4af">
+     w4af test scripts (PHP)
  </h1>
-    <p>This section has all the scripts that are run using the "./w3af_console -t"
- command. The objective of these vulnerable scripts is to test w3af, there
+    <p>This section has all the scripts that are run using the "./w4af_console -t"
+ command. The objective of these vulnerable scripts is to test w4af, there
     is no intention to have a complete Web Application. There are three
  different ways to access THE SAME vulnerable PHP scripts: </p>
  <ul>
- 	<li><a href="/w3af/">Directly, without any protection</a></li>
- 	<li><a href="/mod_security/w3af/">Using mod_security</a></li>
- 	<li><a href="/php-ids/w3af/">Using PHP-IDS</a></li>
+ 	<li><a href="/w4af/">Directly, without any protection</a></li>
+ 	<li><a href="/mod_security/w4af/">Using mod_security</a></li>
+ 	<li><a href="/php-ids/w4af/">Using PHP-IDS</a></li>
  </ul>
 
     <p>For both the mod_security and php-ids versions of the test scripts, a
     clear indication is shown when you are detected by the corresponding IDS
     system: 
-    <a href="/php-ids/w3af/audit/xss/simple_xss.php?text=1&test=><script>eval(window.name)</script>">PHP-IDS</a>
-     , <a href="/mod_security/w3af/audit/xss/simple_xss_no_js.php?text=1' union select * from table where 1=1">mod_security</a> .</p>
+    <a href="/php-ids/w4af/audit/xss/simple_xss.php?text=1&test=><script>eval(window.name)</script>">PHP-IDS</a>
+     , <a href="/mod_security/w4af/audit/xss/simple_xss_no_js.php?text=1' union select * from table where 1=1">mod_security</a> .</p>
 
  <h1 id="wivet">
      wivet (PHP)
@@ -77,7 +77,7 @@ included in the release.</p>
  <h1 id="misc">
      Other files and resources
  </h1>
-    Inside this directory you'll also find a collection of files that are also used by w3af to perform self-tests:<br/>
+    Inside this directory you'll also find a collection of files that are also used by w4af to perform self-tests:<br/>
 
     <ol>
         <li><a href="phpinfo.php">phpinfo.php</a></li>

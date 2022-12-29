@@ -32,44 +32,44 @@
 	#JkMount /wavsep/* ajp13_worker
 
 	# DAV
-	<Directory /var/www/moth/w3af/audit/dav/>
+	<Directory /var/www/moth/w4af/audit/dav/>
         DAV On
     </Directory>
 
 	#
 	# Authentication tests
 	# 
-	<Directory "/var/www/moth/w3af/bruteforce/basic_auth/easy_guess/">
+	<Directory "/var/www/moth/w4af/bruteforce/basic_auth/easy_guess/">
 	    AuthType Basic
 	    AuthName "moth authentication - basic"
-        AuthUserFile /var/www/moth/w3af/bruteforce/basic_auth/easy_guess/.htpasswd
+        AuthUserFile /var/www/moth/w4af/bruteforce/basic_auth/easy_guess/.htpasswd
         Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
     </Directory>
 
-    <Directory "/var/www/moth/w3af/bruteforce/digest_auth/easy_guess/">
+    <Directory "/var/www/moth/w4af/bruteforce/digest_auth/easy_guess/">
 	    AuthType Digest
 	    AuthName "moth authentication - digest"
-	    AuthUserFile /var/www/moth/w3af/bruteforce/basic_auth/easy_guess/.htpasswd
+	    AuthUserFile /var/www/moth/w4af/bruteforce/basic_auth/easy_guess/.htpasswd
 	    Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
     </Directory>
 
-    <Directory "/var/www/moth/w3af/bruteforce/basic_auth/impossible_guess/">
+    <Directory "/var/www/moth/w4af/bruteforce/basic_auth/impossible_guess/">
 	    AuthType Basic
 	    AuthName "moth authentication - basic"
-	    AuthUserFile /var/www/moth/w3af/bruteforce/basic_auth/impossible_guess/.htpasswd
+	    AuthUserFile /var/www/moth/w4af/bruteforce/basic_auth/impossible_guess/.htpasswd
 	    Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
     </Directory>
 
-    <Directory "/var/www/moth/w3af/bruteforce/digest_auth/impossible_guess/">
+    <Directory "/var/www/moth/w4af/bruteforce/digest_auth/impossible_guess/">
 	    AuthType Digest
 	    AuthName "moth authentication - digest"
-	    AuthUserFile /var/www/moth/w3af/bruteforce/basic_auth/impossible_guess/.htpasswd
+	    AuthUserFile /var/www/moth/w4af/bruteforce/basic_auth/impossible_guess/.htpasswd
 	    Require valid-user
 	    Options FollowSymLinks
 	    AllowOverride None
@@ -78,14 +78,14 @@
     #
     # Special 404 message
     #
-    <Directory "/var/www/moth/w3af/bruteforce/">
-	    ErrorDocument 404 /w3af/
+    <Directory "/var/www/moth/w4af/bruteforce/">
+	    ErrorDocument 404 /w4af/
     </Directory>
 
     #
     # Poorly configured Limit
     #
-    <Location "/w3af/audit/htaccess_methods/restricted/">
+    <Location "/w4af/audit/htaccess_methods/restricted/">
 	    <Limit GET POST>
 			order deny,allow
 			deny from all
